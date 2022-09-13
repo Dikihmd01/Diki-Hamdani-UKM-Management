@@ -62,3 +62,27 @@ Berisi jenis-jenis kegiatan yang tersedia di Computer Club, baik kegiatan minggu
 **Form Edit**
 ![image](https://user-images.githubusercontent.com/36911342/189934291-a5d4d8aa-58bb-49de-9a4f-a9ef57037f7b.png)
 
+## Keuangan
+### Saldo
+![image](https://user-images.githubusercontent.com/36911342/189934573-dacfe5b1-3a19-4ca1-9f94-92dad5339816.png)
+
+**Form Create**
+![image](https://user-images.githubusercontent.com/36911342/189934749-56f99c92-1a96-450a-a121-3c946dd0ca30.png)
+
+### Pemasukan
+![image](https://user-images.githubusercontent.com/36911342/189934813-fc7c9d60-fd94-4ad6-914b-7e4f4183cf01.png)
+
+**Form Create**
+![image](https://user-images.githubusercontent.com/36911342/189934889-a38994b8-1009-43f6-9008-ae0f0ce91632.png)
+
+**Form Edit**
+![image](https://user-images.githubusercontent.com/36911342/189934982-b7be0eef-f246-4013-8ca3-b62a68ba6c17.png)
+
+### Pengeluaran
+![image](https://user-images.githubusercontent.com/36911342/189935086-d4802e5f-094f-4ad3-8e91-58dd0a551cfe.png)
+
+**Form Create**
+![image](https://user-images.githubusercontent.com/36911342/189935177-246e6c8a-0646-429d-b8a4-41538b6bcee2.png)
+
+**Form Edit**
+![image](https://user-images.githubusercontent.com/36911342/189935244-ff4af2b9-a86b-41d8-a069-92dd790f9ad3.png)
