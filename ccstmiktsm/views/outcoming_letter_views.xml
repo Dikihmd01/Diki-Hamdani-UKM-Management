@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- ccstmiktsm.outcomingletter tree view -->
+    <record id="ccstmiktsm_outcomingletter_view_tree" model="ir.ui.view">
+        <field name="name">ccstmiktsm.outcomingletter.view.tree</field>
+        <field name="model">ccstmiktsm.outcomingletter</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="outcoming_code"/>
+                <field name="name"/>
+                <field name="destination"/>
+                <field name="sender_name"/>
+                <field name="date_outcoming"/>
+                <field name="received_by"/>
+                <field name="state"/>
+                <field name="file_name" string="Arsip"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- ccstmiktsm.outcomingletter search view -->
+    <record id="ccstmiktsm_outcomingletter_view_search" model="ir.ui.view">
+        <field name="name">ccstmiktsm.outcomingletter.view.search</field>
+        <field name="model">ccstmiktsm.outcomingletter</field>
+        <field name="arch" type="xml">
+            <search string="Filter Surat Keluar">
+                <field name="outcoming_code"/>
+                <field name="name"/>
+                <field name="destination"/>
+                <field name="sender_name"/>
+                <field name="date_outcoming"/>
+                <field name="state"/>
+                <field name="file_name" string="Arsip"/>
+                <separator/>
+                <filter 
+                    name="lfm"
+                    string="Surat Dari LFM"
+                    domain="[('destination', '=', 'LFM')]" />
+                <filter
+                    name="fdk"
+                    string="Surat Dari FDK"
+                    domain="[('destination', '=', 'FDK')]" />
+                <filter 
+                    name="mb" 
+                    string="Surat Dari MB"
+                    domain="[('destination', '=', 'MB')]" />
+                <filter 
+                    name="padus"
+                    string="Surat Dari Padus"
+                    domain="[('destination', '=', 'Padus')]" />
+                <filter 
+                    name="mapalas" 
+                    string="Surat Dari Mapalas"
+                    domain="[('destination', '=', 'Mapalas')]" />
+                <filter 
+                    name="homeband" 
+                    string="Surat Dari Homeband"
+                    domain="[('destination', '=', 'Homeband')]" />
+                <separator/>
+
+                
+                <group string="Group by" expand="1">
+                    <filter 
+                        name="penerima" 
+                        string="Nama Penerima"
+                        context="{'group_by':'received_by', 'residual_visible':True}" />
+                </group>
+                <group string="Group by" expand="1">
+                    <filter 
+                        name="ukm" 
+                        string="UKM"
+                        context="{'group_by':'destination', 'residual_visible':True}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ccstmiktsm.outcomingletter form view -->
+    <record id="ccstmiktsm_outcomingletter_view_form" model="ir.ui.view">
+        <field name="name">ccstmiktsm.outcomingletter.view.form</field>
+        <field name="model">ccstmiktsm.outcomingletter</field>
+        <field name="arch" type="xml">
+            <form string="Form Surat Keluar">
+                <header>
+                    <button string="Terkirim"
+                        name="action_sent"
+                        type="object"
+                        class="oe_highlight"
+                        states="draft" />
+                    
+                    <button string="Batalkan"
+                        name="action_canceled"
+                        type="object"
+                        class="btn btn-danger"
+                        states="terkirim"
+                        confirm="Apakah kamu yakin ingin cancel quotation ini?" />
+                    
+                    <button string="Selesai"
+                        name="action_done"
+                        type="object"
+                        class="btn btn-success"
+                        states="terkirim"
+                        confirm="Apakah kamu yakin ingin cancel quotation ini?" />
+                    
+                    <button string="Kembali ke Draft"
+                        name="action_draft"
+                        type="object"
+                        class="oe_highlight"
+                        states="dibatalkan"
+                        confirm="Apakah kamu yakin ingin edit quotation ini?" />
+
+                    <field name="state"
+                        widget="statusbar"
+                        statusbar_visible="draft,terkirim,selesai,dibatalkan" />
+                </header>
+                <sheet>
+                    <div class="row">
+                        <div class="container">
+                            <div class="oe_title">
+                                <div class="col-md-12">
+                                    <div class="oe_edit_only">
+                                        <label for="outcoming_code" />
+                                    </div>
+                                    <b>
+                                        <field
+                                            name="outcoming_code"
+                                            class="o_text_overflow"/>
+                                    </b>
+
+                                    <div class="oe_edit_only">
+                                        <label for="name" />
+                                    </div>
+                                    <h1>
+                                        <field
+                                            name="name"
+                                            class="o_text_overflow"
+                                            attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-12">
+                                        <group name="Surat Masuk" string="Surat Masuk">
+                                            <field
+                                                name="destination"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                            <field
+                                                name="sender_name"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                            <field
+                                                name="date_outcoming"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                            <field
+                                                name="received_by"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                            <field
+                                                name="archive"
+                                                filename="file_name"
+                                                attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                                            <field name="file_name" invisible="1"/>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ccstmiktsm_outcomingletter_action" model="ir.actions.act_window">
+        <field name="name">Daftar Surat Keluar</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ccstmiktsm.outcomingletter</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem
+        id="ccstmiktsm_outcomingletter_menu_act"
+        name="Surat Keluar" 
+        parent="ccstmiktsm_letter_menu_categ"
+        action="ccstmiktsm_outcomingletter_action"
+        sequence="10"/>
+
+</odoo>

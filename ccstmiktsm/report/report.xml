@@ -1,0 +1,43 @@
+<odoo>
+
+    <record id="export_incoming_excel" model="ir.actions.report">
+        <field name="name">Export ke Excel</field>
+        <field name="model">ccstmiktsm.incomingletter</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">ccstmiktsm.export_incoming_excel</field>
+        <field name="report_file">ccstmiktsm.export_incoming_excel</field>
+        <field name="binding_model_id" ref="model_ccstmiktsm_incomingletter"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="export_outcoming_excel" model="ir.actions.report">
+        <field name="name">Export ke Excel</field>
+        <field name="model">ccstmiktsm.outcomingletter</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">ccstmiktsm.export_outcoming_excel</field>
+        <field name="report_file">ccstmiktsm.export_outcoming_excel</field>
+        <field name="binding_model_id" ref="model_ccstmiktsm_outcomingletter"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="export_incomingletter_pdf" model="ir.actions.report">
+        <field name="name">Export ke PDF</field>
+        <field name="model">ccstmiktsm.incomingletter</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ccstmiktsm.export_incomingletter_pdf</field>
+        <field name="report_file">ccstmiktsm.export_incomingletter_pdf</field>
+        <field name="binding_model_id" ref="model_ccstmiktsm_incomingletter"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="export_outcomingletter_pdf" model="ir.actions.report">
+        <field name="name">Export ke PDF</field>
+        <field name="model">ccstmiktsm.outcomingletter</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ccstmiktsm.export_outcomingletter_pdf</field>
+        <field name="report_file">ccstmiktsm.export_outcomingletter_pdf</field>
+        <field name="binding_model_id" ref="model_ccstmiktsm_outcomingletter"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

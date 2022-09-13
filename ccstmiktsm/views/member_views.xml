@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- res.partner inherit tree view -->
+    <record id="res_partner_member_view_tree_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="mode">extension</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='display_name']" position="before">
+                <field name="npm" />
+            </xpath> 
+            <xpath expr="//field[@name='display_name']" position="after">
+                <field name="batch" />
+            </xpath>  
+            <xpath expr="//field[@name='display_name']" position="after">
+                <field name="major" />
+                <field name="division" />
+                <field name="state" />
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='display_name']" position="attributes">
+                <attribute name="string">Nama Lengkap</attribute>
+            </xpath>
+            <xpath expr="//field[@name='phone']" position="attributes">
+                <attribute name="string">No. Telp.</attribute>
+            </xpath>
+            <xpath expr="//field[@name='city']" position="attributes">
+                <attribute name="string">Alamat</attribute>
+            </xpath>
+            <xpath expr="//field[@name='country_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.partner inherit form view -->
+    <record id="res_partner_member_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="mode">extension</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="before">
+                <field name="npm" />
+                <field name="major" />
+                <field name="batch" />
+            </xpath>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="string">Divisi</attribute>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='street2']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_type']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='mobile']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='phone']" position="before">
+                <field name="division"/>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='title']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='division']" position="before">
+                <field name="state" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- res.partner inherit search view -->
+    <record id="res_partner_member_inherit_search" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after" >
+                <filter name="state" string="Anggota Aktif" domain="[('state', '=', 'aktif')]"  />
+                <group string="Group by" expand="1">
+                    <filter name="Angkatan" string="Angkatan"
+                            context="{'group_by':'batch', 'residual_visible':True}" />
+                </group>
+                <group string="Group by" expand="1">
+                    <filter name="Divisi" string="Divisi"
+                            context="{'group_by':'division', 'residual_visible':True}" />
+                </group>
+                <group string="Group by" expand="1">
+                    <filter name="Status" string="Status"
+                            context="{'group_by':'state', 'residual_visible':True}" />
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <!-- res.partner action window -->
+    <record id="res_partner_member_action" model="ir.actions.act_window">
+        <field name="name">Anggota UKM Computer Club</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="context">
+            {
+                'search_default_state': 1,
+                'default_state':'aktif'
+            }
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="member_view_menu_act" 
+        name="Daftar Anggota" 
+        parent="ccstmiktsm_menu_root" 
+        action="res_partner_member_action" 
+        sequence="30"/>
+
+</odoo>

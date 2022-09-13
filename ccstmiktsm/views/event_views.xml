@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- ccstmiktsm.event tree view -->
+    <record id="ccstmiktsm_event_view_tree" model="ir.ui.view">
+        <field name="name">ccstmiktsm.event.view.tree</field>
+        <field name="model">ccstmiktsm.event</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="event_code"/>
+                <field name="event_type_id"/>
+                <field name="speaker"/>
+                <field name="division_of_speaker"/>
+                <field name="event_date"/>
+                <field name="place"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- ccstmiktsm.event search view -->
+    <record id="ccstmiktsm_event_view_search" model="ir.ui.view">
+        <field name="name">ccstmiktsm.event.view.search</field>
+        <field name="model">ccstmiktsm.event</field>
+        <field name="arch" type="xml">
+            <search string="Filter BUku">
+                <field name="name"/>
+                <field name="event_code"/>
+                <field name="event_type_id"/>
+                <field name="speaker"/>
+                <field name="division_of_speaker"/>
+                <field name="event_date"/>
+                <field name="place"/>
+                <field name="state"/>
+                <separator/>
+                <filter name="se" string="Pemateri SE"
+                        domain="[('division_of_speaker', '=', 'SE')]" />
+                <filter name="pd" string="Pemateri PD"
+                        domain="[('division_of_speaker', '=', 'PD')]" />
+                <filter name="ba" string="Pemateri BA"
+                        domain="[('division_of_speaker', '=', 'BA')]" />
+                <filter name="ccpasif" string="Pemateri CC Pasif"
+                        domain="[('division_of_speaker', '=', 'ccpasif')]" />
+                <filter name="external" string="Pemateri External"
+                        domain="[('division_of_speaker', '=', 'External')]" />
+                <separator/>
+                <filter name="ccroutine" string="CC Routine"
+                        domain="[('event_type_id', '=', 'CC Routine')]" />
+                <filter name="cctalk" string="CC Talk"
+                        domain="[('event_type_id', '=', 'CC Talk')]" />
+                <filter name="ccclas" string="CC Class"
+                        domain="[('event_type_id', '=', 'CC Class')]" />
+                <filter name="ccjourney" string="CC Journey"
+                        domain="[('event_type_id', '=', 'CC Journey')]" />
+
+                <separator/>
+                <filter name="diajukan" string="Diajukan"
+                        domain="[('state', '=', 'diajukan')]" />
+                <filter name="dijadwalkan" string="Dijadwalkan"
+                        domain="[('state', '=', 'dijadwalkan')]" />
+                <filter name="diterima" string="Diterima"
+                        domain="[('state', '=', 'diterima')]" /> 
+                <filter name="selesai" string="Selesai"
+                        domain="[('state', '=', 'selesai')]" /> 
+                <filter name="dibatalkan" string="Dibatalkan"
+                        domain="[('state', '=', 'dibatalkan')]" /> 
+
+                <group string="Group by" expand="1">
+                    <filter name="asal pemateri" string="Asal pemateri"
+                            context="{'group_by':'division_of_speaker', 'residual_visible':True}" />
+                </group>
+                <group string="Group by" expand="1">
+                    <filter name="Jenis Kegiatan" string="Jenis Kegiatan"
+                            context="{'group_by':'event_type_id', 'residual_visible':True}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ccstmiktsm.event form view -->
+    <record id="ccstmiktsm_event_view_form" model="ir.ui.view">
+        <field name="name">ccstmiktsm.event.view.form</field>
+        <field name="model">ccstmiktsm.event</field>
+        <field name="arch" type="xml">
+            <form string="Kegiatan Computer Club">
+                <header>
+                    <button string="Diterima"
+                        name="action_approved"
+                        type="object"
+                        class="oe_highlight my-0"
+                        states="diajukan" />
+                    
+                    <button string="Dijadwalkan"
+                        name="action_scheduled"
+                        type="object"
+                        class="oe_highlight my-0"
+                        states="diterima" />
+                    
+                    <button string="Kembali ke Diajukan"
+                        name="action_proposed"
+                        type="object"
+                        class="oe_highlight my-0"
+                        states="dibatalkan,diterima"
+                        confirm="Apakah kamu yakin ingin edit quotation ini?" />
+                    
+                    <button string="Batalkan"
+                        name="action_canceled"
+                        type="object"
+                        class="btn btn-danger"
+                        states="dijadwalkan,diterima,diajukan"
+                        confirm="Apakah kamu yakin ingin cancel quotation ini?" />
+                    
+                    <button string="Selesai"
+                        name="action_done"
+                        type="object"
+                        class="btn btn-success"
+                        states="dijadwalkan"
+                        confirm="Apakah kamu yakin ingin menyelsaikan quotation ini?" />
+
+                    <field name="state"
+                        widget="statusbar"
+                        statusbar_visible="diajukan,diterima,dijadwalkan,selesai,dibatalkan" />
+                </header>
+                <sheet>
+                    <div class="row">
+                        <div class="container">
+                            <div class="oe_title">
+                                <div class="col-md-12">
+                                    <div class="oe_edit_only">
+                                        <label for="event_code" />
+                                    </div>
+                                    <b>
+                                        <field name="event_code" class="o_text_overflow"/>
+                                    </b>
+
+                                    <div class="oe_edit_only">
+                                        <label for="name" />
+                                    </div>
+                                    <h1>
+                                        <field name="name" class="o_text_overflow"/>
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-12">
+                                        <group name="Buku" string="Buku">
+                                            <field name="event_type_id"/>
+                                            <field name="speaker"/>
+                                            <field name="division_of_speaker"/>
+                                            <field name="event_date"/>
+                                            <field name="place"/>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ccstmiktsm_event_action" model="ir.actions.act_window">
+        <field name="name">Daftar Kegiatan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ccstmiktsm.event</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem
+        id="ccstmiktsm_event_menu_act"
+        name="Daftar Kegiatan" 
+        parent="ccstmiktsm_event_menu_categ"
+        action="ccstmiktsm_event_action"
+        sequence="10"/>
+
+</odoo>

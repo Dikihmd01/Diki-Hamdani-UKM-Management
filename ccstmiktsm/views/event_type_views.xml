@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- ccstmiktsm.eventtype tree view -->
+    <record id="ccstmiktsm_eventtype_view_tree" model="ir.ui.view">
+        <field name="name">ccstmiktsm.eventtype.view.tree</field>
+        <field name="model">ccstmiktsm.eventtype</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="event_type_code"/>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ccstmiktsm.eventtype form view -->
+    <record id="ccstmiktsm_eventtype_view_form" model="ir.ui.view">
+        <field name="name">Jenis Kegiatan</field>
+        <field name="model">ccstmiktsm.eventtype</field>
+        <field name="arch" type="xml">
+            <form string="Form Supplier">
+                <sheet>
+                    <div class="row">
+                        <div class="container">
+                            <div class="oe_title">
+                                <div class="col-md-12">
+                                    <div class="oe_edit_only">
+                                        <label for="event_type_code" />
+                                    </div>
+                                    <b>
+                                        <field name="event_type_code" class="o_text_overflow"/>
+                                    </b>
+
+                                    <div class="oe_edit_only">
+                                        <label for="name" />
+                                    </div>
+                                    <h1>
+                                        <field name="name" class="o_text_overflow"/>
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-12">
+                                        <group name="Deskripsi" string="Deskripsi">
+                                            <field name="description"/>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-12">
+                                        <group name="Acara" string="Acara">
+                                            <field name="event_ids" nolabel="1" />
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ccstmiktsm_eventtype_action" model="ir.actions.act_window">
+        <field name="name">Daftar Jenis Kegiatan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ccstmiktsm.eventtype</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem
+        id="ccstmiktsm_eventtype_menu_act"
+        name="Jenis Kegiatan" 
+        parent="ccstmiktsm_event_menu_categ"
+        action="ccstmiktsm_eventtype_action"
+        sequence="31"/>
+
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <data noupdate="1">
+
+        <record id="seq_ccstmiktsm_outcome" model="ir.sequence">
+            <field name="name">Kode Kegiatan</field>
+            <field name="code">ccstmiktsm.outcome</field>
+            <field name="prefix">CC/KAS/MASUK/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_ccstmiktsm_income" model="ir.sequence">
+            <field name="name">Kode Kegiatan</field>
+            <field name="code">ccstmiktsm.income</field>
+            <field name="prefix">CC/KAS/MASUK/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_ccstmiktsm_outcomingletter" model="ir.sequence">
+            <field name="name">Kode Kegiatan</field>
+            <field name="code">ccstmiktsm.outcomingletter</field>
+            <field name="prefix">CC/SURAT/KELUAR/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_ccstmiktsm_incomingletter" model="ir.sequence">
+            <field name="name">Kode Kegiatan</field>
+            <field name="code">ccstmiktsm.incomingletter</field>
+            <field name="prefix">CC/SURAT/MASUK/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_ccstmiktsm_event" model="ir.sequence">
+            <field name="name">Kode Kegiatan</field>
+            <field name="code">ccstmiktsm.event</field>
+            <field name="prefix">CC/EVENT/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_ccstmiktsm_eventtype" model="ir.sequence">
+            <field name="name">Kode Jenis Kegiatan</field>
+            <field name="code">ccstmiktsm.eventtype</field>
+            <field name="prefix">CC/EVENT/TYP/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    
+    </data>
+    
+
+</odoo>

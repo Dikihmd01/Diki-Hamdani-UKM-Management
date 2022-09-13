@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem
+        id="ccstmiktsm_menu_root"
+        name="UKM Computer Club"
+        sequence="10"/>
+    
+    <menuitem
+        id="ccstmiktsm_event_menu_categ"
+        name="Kegiatan"
+        parent="ccstmiktsm_menu_root"
+        sequence="31"/>
+    
+    <menuitem
+        id="ccstmiktsm_letter_menu_categ"
+        name="Surat Keluar Masuk"
+        parent="ccstmiktsm_menu_root"
+        sequence="35"/>
+    
+    <menuitem
+        id="ccstmiktsm_finance_menu_categ"
+        name="Keuangan"
+        parent="ccstmiktsm_menu_root"
+        sequence="35"/>
+
+</odoo>

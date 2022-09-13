@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ccstmiktsm_eventtype,access.ccstmiktsm.eventtype,model_ccstmiktsm_eventtype,,1,1,1,1
+access_ccstmiktsm_event,access.ccstmiktsm.event,model_ccstmiktsm_event,,1,1,1,1
+access_ccstmiktsm_incomingletter,access.ccstmiktsm.incomingletter,model_ccstmiktsm_incomingletter,,1,1,1,1
+access_ccstmiktsm_outcomingletter,access.ccstmiktsm.outcomingletter,model_ccstmiktsm_outcomingletter,,1,1,1,1
+access_ccstmiktsm_balance,access.ccstmiktsm.balance,model_ccstmiktsm_balance,,1,1,1,1
+access_ccstmiktsm_income,access.ccstmiktsm.income,model_ccstmiktsm_income,,1,1,1,1
+access_ccstmiktsm_outcome,access.ccstmiktsm.outcome,model_ccstmiktsm_outcome,,1,1,1,1

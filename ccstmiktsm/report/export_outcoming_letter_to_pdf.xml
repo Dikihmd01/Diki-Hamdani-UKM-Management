@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="export_outcomingletter_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1>Daftar Surat Keluar</h1>
+                        <div class="row mt-4">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Kode</th>
+                                        <th>Keterangan</th>
+                                        <th>Tujuan</th>
+                                        <th>Pengirim</th>
+                                        <th>Tanggal</th>
+                                        <th>Penerima</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span t-field="docs.outcoming_code" /></td>
+                                        <td><span t-field="docs.name" /></td>
+                                        <td><span t-field="docs.destination" /></td>
+                                        <td><span t-field="docs.sender_name" /></td>
+                                        <td><span t-field="docs.date_outcoming" /></td>
+                                        <td><span t-field="docs.received_by" /></td>
+                                        <td><span t-field="docs.state" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

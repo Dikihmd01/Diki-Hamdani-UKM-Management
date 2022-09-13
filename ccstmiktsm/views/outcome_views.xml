@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- ccstmiktsm.outcome tree view -->
+    <record id="ccstmiktsm_outcome_view_tree" model="ir.ui.view">
+        <field name="name">ccstmiktsm.outcome.view.tree</field>
+        <field name="model">ccstmiktsm.outcome</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="outcome_code"/>
+                <field name="name"/>
+                <field name="new_outcome"/>
+                <field name="date_out"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ccstmiktsm.outcome form view -->
+    <record id="ccstmiktsm_outcome_view_form" model="ir.ui.view">
+        <field name="name">Form Pengeluaran</field>
+        <field name="model">ccstmiktsm.outcome</field>
+        <field name="arch" type="xml">
+            <form string="Form Supplier">
+                <sheet>
+                    <div class="row">
+                        <div class="container">
+                            <div class="oe_title">
+                                <div class="col-md-12">
+                                    <div class="oe_edit_only">
+                                        <label for="outcome_code" />
+                                    </div>
+                                    <b>
+                                        <field name="outcome_code" class="o_text_overflow"/>
+                                    </b>
+
+                                    <div class="oe_edit_only">
+                                        <label for="name" />
+                                    </div>
+                                    <h1>
+                                        <field name="name" class="o_text_overflow"/>
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-12">
+                                        <group name="Deskripsi" string="Deskripsi">
+                                            <field name="new_outcome"/>
+                                            <field name="date_out"/>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-12">
+                                        <group name="Saldo" string="Saldo">
+                                            <field name="balance_id" />
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ccstmiktsm_outcome_action" model="ir.actions.act_window">
+        <field name="name">Daftar Pengeluaran</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ccstmiktsm.outcome</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem
+        id="ccstmiktsm_outcome_menu_act"
+        name="Pengeluaran" 
+        parent="ccstmiktsm_finance_menu_categ"
+        action="ccstmiktsm_outcome_action"
+        sequence="32"/>
+
+</odoo>
