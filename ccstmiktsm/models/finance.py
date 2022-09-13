@@ -18,23 +18,25 @@ class Balance(models.Model):
     outcome_ids = fields.One2many(
         comodel_name='ccstmiktsm.outcome',
         inverse_name='balance_id',
-        string='Pemasukan'
+        string='Pemasukan',
     )
     
     @api.depends('income_ids', 'outcome_ids')
     def _compute_saldo(self):
         for line in self:
-            if line.income_ids:
-                print("passed 1")
+            if line.income_ids :
                 incomes = sum(self.env['ccstmiktsm.income'].search(
                     [('balance_id', '=', line.id)]).mapped('new_income'))
                 line.saldo = incomes
+            else:
+                line.saldo = 0
             
             if line.outcome_ids:
-                print("passed 2")
                 outcomes = sum(self.env['ccstmiktsm.outcome'].search(
                     [('balance_id', '=', line.id)]).mapped('new_outcome'))
                 line.saldo = line.saldo - outcomes
+            else:
+                line.saldo = 0
 
 
 class Income(models.Model):
