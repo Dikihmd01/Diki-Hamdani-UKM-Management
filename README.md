@@ -67,6 +67,9 @@ Berisi jenis-jenis kegiatan yang tersedia di Computer Club, baik kegiatan minggu
 ![image](https://user-images.githubusercontent.com/36911342/189934573-dacfe5b1-3a19-4ca1-9f94-92dad5339816.png)
 
 **Form Create**
+![image](https://user-images.githubusercontent.com/36911342/189938751-e3621d6e-2521-4857-b6f2-5668dbb2d2f3.png)
+
+**Form Edit**
 ![image](https://user-images.githubusercontent.com/36911342/189934749-56f99c92-1a96-450a-a121-3c946dd0ca30.png)
 
 ### Pemasukan
