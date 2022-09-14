@@ -5,6 +5,11 @@ Nama: Diki Hamdani
 
 Divisi: Software Programmer
 
+# Projek selama Training
+- [Book Store](https://github.com/Dikihmd01/bookstore-diki)
+- [UKM Management](https://github.com/Dikihmd01/ukm-management)
+- [Real Estate](https://github.com/Dikihmd01/latihan-odoo)
+
 # Tentang Projek
 Projek ini merupakan sistem manajemn Unit Kegiatan Mahasiswa (UKM). Pembuatan projek ini dilatarbelakangi oleh susahnya manajemen dokumen dan anggota di suatu UKM. Pada projek ini objeknya adalah UKM Computer Club STMIK Tasikmalaya.
 
