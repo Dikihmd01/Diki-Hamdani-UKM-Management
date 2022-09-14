@@ -1,4 +1,5 @@
 # Final Project Training Odoo 15
+Repositori versi lengkap: [UKM Management](https://github.com/Dikihmd01/ukm-management)
 
 Nama: Diki Hamdani
 
