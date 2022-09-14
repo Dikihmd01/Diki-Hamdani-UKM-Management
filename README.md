@@ -9,7 +9,7 @@ Divisi: Software Programmer
 - [UKM Management](https://github.com/Dikihmd01/ukm-management)
 - [Book Store](https://github.com/Dikihmd01/bookstore-diki)
 - [Real Estate](https://github.com/Dikihmd01/latihan-odoo)
-- [Dokumentasi Odoo](odoo.notionweb.live)
+- [Dokumentasi Odoo Pribadi](http://odoo.notionweb.live/)
 
 # Tentang Projek
 Projek ini merupakan sistem manajemn Unit Kegiatan Mahasiswa (UKM). Pembuatan projek ini dilatarbelakangi oleh susahnya manajemen dokumen dan anggota di suatu UKM. Pada projek ini objeknya adalah UKM Computer Club STMIK Tasikmalaya.
