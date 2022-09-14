@@ -24,19 +24,21 @@ class Balance(models.Model):
     @api.depends('income_ids', 'outcome_ids')
     def _compute_saldo(self):
         for line in self:
-            if line.income_ids :
+            if line.income_ids:
                 incomes = sum(self.env['ccstmiktsm.income'].search(
                     [('balance_id', '=', line.id)]).mapped('new_income'))
                 line.saldo = incomes
             else:
-                line.saldo = 0
+                line.saldo = self.saldo
             
             if line.outcome_ids:
                 outcomes = sum(self.env['ccstmiktsm.outcome'].search(
                     [('balance_id', '=', line.id)]).mapped('new_outcome'))
                 line.saldo = line.saldo - outcomes
             else:
-                line.saldo = 0
+                outcomes = sum(self.env['ccstmiktsm.outcome'].search(
+                    [('balance_id', '=', line.id)]).mapped('new_outcome'))
+                line.saldo = line.saldo - outcomes
 
 
 class Income(models.Model):
