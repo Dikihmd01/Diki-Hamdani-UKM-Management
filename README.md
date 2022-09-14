@@ -5,6 +5,8 @@ Nama: Diki Hamdani
 
 Divisi: Software Programmer
 
+E-mail: diki.hamdani@hashmmicro.id
+
 # Projek selama Training
 - [UKM Management](https://github.com/Dikihmd01/ukm-management)
 - [Book Store](https://github.com/Dikihmd01/bookstore-diki)
