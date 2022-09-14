@@ -1,5 +1,15 @@
 <odoo>
 
+    <record id="export_incoming_balance_excel" model="ir.actions.report">
+        <field name="name">Export ke Excel</field>
+        <field name="model">ccstmiktsm.income</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">ccstmiktsm.export_incoming_balance_excel</field>
+        <field name="report_file">ccstmiktsm.export_incoming_balance_excel</field>
+        <field name="binding_model_id" ref="model_ccstmiktsm_income"/>
+        <field name="binding_type">report</field>
+    </record>
+
     <record id="export_incoming_excel" model="ir.actions.report">
         <field name="name">Export ke Excel</field>
         <field name="model">ccstmiktsm.incomingletter</field>
