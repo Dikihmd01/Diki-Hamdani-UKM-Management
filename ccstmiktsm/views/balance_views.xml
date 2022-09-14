@@ -69,8 +69,8 @@
     <menuitem
         id="ccstmiktsm_balance_menu_act"
         name="Saldo" 
-        parent="ccstmiktsm_finance_menu_categ"
+        parent="ccstmiktsm_menu_root"
         action="ccstmiktsm_balance_action"
-        sequence="31"/>
+        sequence="50"/>
 
 </odoo>
