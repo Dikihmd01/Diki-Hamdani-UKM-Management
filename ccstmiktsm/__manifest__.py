@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'report_xlsx'],
+    'depends': ['base', 'report_xlsx', 'board'],
 
     # always loaded
     'data': [
@@ -37,6 +37,7 @@
         'views/balance_views.xml',
         'views/income_views.xml',
         'views/outcome_views.xml',
+        'views/dashboard.xml',
         'report/report.xml',
         'report/export_incoming_letter_to_pdf.xml',
         'report/export_outcoming_letter_to_pdf.xml',
