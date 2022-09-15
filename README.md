@@ -17,6 +17,9 @@ E-mail: diki.hamdani@hashmmicro.id
 Projek ini merupakan sistem manajemn Unit Kegiatan Mahasiswa (UKM). Pembuatan projek ini dilatarbelakangi oleh susahnya manajemen dokumen dan anggota di suatu UKM. Pada projek ini objeknya adalah UKM Computer Club STMIK Tasikmalaya.
 
 # Fitur
+## Dashboard
+![image](https://user-images.githubusercontent.com/36911342/190315631-d0c76145-343b-4336-9a17-25bd2668b06d.png)
+
 ## Anggota
 ![image](https://user-images.githubusercontent.com/36911342/189931893-cea14e05-331e-4ccd-9830-e93cb297139d.png)
 
