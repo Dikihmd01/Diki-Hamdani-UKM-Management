@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="export_income_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1>Daftar Pemasukan</h1>
+                        <div class="row mt-4">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Kode</th>
+                                        <th>Keterangan</th>
+                                        <th>Tanggal</th>
+                                        <th>Jumlah Nominal</th>
+                                        <th>Periode</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span t-field="docs.income_code" /></td>
+                                        <td><span t-field="docs.name" /></td>
+                                        <td><span t-field="docs.date_in" /></td>
+                                        <td><span t-field="docs.new_income" /></td>
+                                        <td><span t-field="docs.balance_id.name" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

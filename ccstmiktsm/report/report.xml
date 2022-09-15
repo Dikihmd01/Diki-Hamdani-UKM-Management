@@ -60,4 +60,24 @@
         <field name="binding_type">report</field>
     </record>
 
+    <record id="export_outcome_pdf" model="ir.actions.report">
+        <field name="name">Export ke PDF</field>
+        <field name="model">ccstmiktsm.outcome</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ccstmiktsm.export_outcome_pdf</field>
+        <field name="report_file">ccstmiktsm.export_outcome_pdf</field>
+        <field name="binding_model_id" ref="model_ccstmiktsm_outcome"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="export_income_pdf" model="ir.actions.report">
+        <field name="name">Export ke PDF</field>
+        <field name="model">ccstmiktsm.income</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ccstmiktsm.export_income_pdf</field>
+        <field name="report_file">ccstmiktsm.export_income_pdf</field>
+        <field name="binding_model_id" ref="model_ccstmiktsm_income"/>
+        <field name="binding_type">report</field>
+    </record>
+
 </odoo>

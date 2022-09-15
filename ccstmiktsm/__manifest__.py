@@ -40,6 +40,8 @@
         'report/report.xml',
         'report/export_incoming_letter_to_pdf.xml',
         'report/export_outcoming_letter_to_pdf.xml',
+        'report/export_incoming_balance_to_pdf.xml',
+        'report/export_outcoming_balance_to_pdf.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
